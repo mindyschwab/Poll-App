@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Corgi Collector</title>
+    <title>PlanIt!</title>
     <!-- using the materialize framework -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -45,10 +45,10 @@
     <ul class="sidenav" id="mobile-links">
         <li><a href="{% url 'about' %}">About</a></li>
             {% if user.is_authenticated %}
-                <li><a href="">Add a Corgi</a></li>
-                <li><a href="">View All My Corgis</a></li>
-                <li><a href="">Add a Toy</a></li>
-                <li><a href="">View All Toys</a></li>
+                <li><a href="">My Events</a></li>
+                <li><a href="">Add an Event</a></li>
+                <li><a href="">My Groups</a></li>
+                <li><a href="">Add a Group</a></li>
                 <li><a href="{% url 'logout' %}">Log Out</a></li>
             {% else %}
                 <li><a href="">Sign Up</a></li>   
