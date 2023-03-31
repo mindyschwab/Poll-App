@@ -1,12 +1,79 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PlanIt!</title>
+    <!-- using the materialize framework -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
 </head>
+
 <body>
-    
+    <header class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <ul>
+                    <li><a href="{% url 'home' %}" class="left brand-logo">PlanIt!</a></li>
+                    <a href="#" data-target="mobile-links" class=" right sidenav-trigger"><i
+                            class="material-icons">menu</i></a>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="">My Events</a></li>
+                    <li><a href="">Add an Event</a></li>
+                    <li><a href="">My Groups</a></li>
+                    <li><a href="">Add a Group</a></li>
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    {% else %}
+                    <li><a href="">Sign Up</a></li>
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <ul class="sidenav" id="mobile-links">
+        <li><a href="{% url 'about' %}">About</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="">My Events</a></li>
+                <li><a href="">Add an Event</a></li>
+                <li><a href="">My Groups</a></li>
+                <li><a href="">Add a Group</a></li>
+                <li><a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %}
+                <li><a href="">Sign Up</a></li>   
+                <li><a href="{% url 'login' %}">Log In</a></li>
+            {% endif %}
+    </ul>
+    <main class="container">
+        <!-- these block and endblock tags are where we will be able to enter other content when we extend this template -->
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    <footer class="page-footer">
+        <div class="right">All Rights Reserved, &copy; 2023 SEI Mariposa Group 4 &nbsp;</div>
+        <div class="right">Jonah Angelo | Jeremiah Broom | Mindy Schwabenbauer | Korbin Westerfield &nbsp;</div>
+    </footer>
+
+    <!-- Source for navnar using jquery:https://www.youtube.com/watch?v=5gHr8RfB0zs -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
 </body>
 </html>
