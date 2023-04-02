@@ -28,32 +28,32 @@
                 </ul>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{% url 'about' %}">About</a></li>
-                    <!-- {% if user.is_authenticated %} -->
+                    {% if user.is_authenticated %}
                     <li><a href="">My Events</a></li>
                     <li><a href="">Add an Event</a></li>
                     <li><a href="">My Groups</a></li>
                     <li><a href="">Add a Group</a></li>
-                    <!-- <li><a href="{% url 'logout' %}">Log Out</a></li> -->
-                    <!-- {% else %} -->
-                    <!-- <li><a href="">Sign Up</a></li> -->
-                    <!-- <li><a href="{% url 'login' %}">Log In</a></li> -->
-                    <!-- {% endif %} -->
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    {% else %}
+                    <li><a href="">Sign Up</a></li>
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
     </header>
     <ul class="sidenav" id="mobile-links">
         <li><a href="{% url 'about' %}">About</a></li>
-            <!-- {% if user.is_authenticated %} -->
+            {% if user.is_authenticated %}
                 <li><a href="">My Events</a></li>
                 <li><a href="">Add an Event</a></li>
                 <li><a href="">My Groups</a></li>
                 <li><a href="">Add a Group</a></li>
-                <!-- <li><a href="{% url 'logout' %}">Log Out</a></li> -->
-            <!-- {% else %} -->
-                <!-- <li><a href="">Sign Up</a></li>    -->
-                <!-- <li><a href="{% url 'login' %}">Log In</a></li> -->
-            <!-- {% endif %} -->
+                <li><a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %} 
+                <li><a href="">Sign Up</a></li>   
+                <li><a href="{% url 'login' %}">Log In</a></li>
+           {% endif %}
     </ul>
     <main class="container">
         <!-- these block and endblock tags are where we will be able to enter other content when we extend this template -->
