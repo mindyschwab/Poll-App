@@ -78,6 +78,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'events',
+        # Jeremiah - remember to add PostgreSQL USER: and PASSWORD: to access database.
+        'USER': 'postgres',
+        'PASSWORD': '20Bassoon21!'
     }
 }
 
