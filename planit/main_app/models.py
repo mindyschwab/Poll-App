@@ -1,5 +1,5 @@
 from django.db import models
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Event(models.Model):
@@ -10,7 +10,7 @@ class Event(models.Model):
     why = models.TextField(max_length=250)
     # will need to uncomment this once the superuser/admin access is created
     # adds a user_id foreignkey colum in the DB
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     #creates a Many to Many Relationship with Poll model
     # polls = models.ManyToManyField(Poll)

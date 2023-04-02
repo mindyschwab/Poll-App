@@ -50,10 +50,10 @@
                 <li><a href="">My Groups</a></li>
                 <li><a href="">Add a Group</a></li>
                 <li><a href="{% url 'logout' %}">Log Out</a></li>
-            {% else %}
+            {% else %} 
                 <li><a href="">Sign Up</a></li>   
                 <li><a href="{% url 'login' %}">Log In</a></li>
-            {% endif %}
+           {% endif %}
     </ul>
     <main class="container">
         <!-- these block and endblock tags are where we will be able to enter other content when we extend this template -->
