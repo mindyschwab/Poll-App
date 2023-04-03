@@ -6,6 +6,7 @@ urlpatterns = [
     path('about', views.about, name='about'),
     path('events/', views.events_index, name='index'),
     path('events/<int:event_id>/', views.events_detail, name='detail'),
+    path('events/create/', views.EventCreate.as_view(), name='events_create'),
     path('events/<int:event_id>/assoc_group/<int:group_id>/',
          views.assoc_group, name='assoc_group'),
     path('events/<int:event_id>/unassoc_group/<int:group_id>/',
