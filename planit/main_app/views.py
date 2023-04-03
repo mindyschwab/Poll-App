@@ -7,8 +7,8 @@ from .models import Event, Group, Poll
 
 # Create your views here.
 events = []
-# Home view
 
+# *************** Basic Views ****************
 
 def home(request):
     return render(request, 'home.html')
@@ -17,11 +17,18 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+# *************** Events Views ****************
 
 def events_index(request):
     # We pass data to a template very much like we did in Express!
     return render(request, 'events/index.html', {
         'events': events
+    })
+
+def events_detail(request, event_id):
+    event = Event.objects.get(id=event_id)
+    return render(request, 'events/detail.html', {
+        'event': event
     })
 
 # *************** Group Views ****************
