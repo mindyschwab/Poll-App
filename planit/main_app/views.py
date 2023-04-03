@@ -34,7 +34,7 @@ def events_detail(request, event_id):
 class EventCreate(CreateView):
     model = Event
     fields = '__all__'
-    success_url = '/events/'
+    success_url = '/events/{event_id}'
 
 # *************** Group Views ****************
 
