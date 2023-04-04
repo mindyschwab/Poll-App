@@ -2,5 +2,21 @@
 {% block content %}
 
 <h1>Event Details</h1>
+<p> {{ event.name }} </p>
+
+<div class="row">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">{{ event.name }}</span>
+                <p>Who: {{ event.who }} </p>
+                <p>When: {{ event.when }} </p>
+            </div>
+            <div class="card-action">
+                <a href="{% url 'events_update' event.id %}">Edit</a>
+                <a href="{% url 'events_delete' event.id %}">Delete</a>
+            </div>
+        </div>
+
+</div>
 
 {% endblock %}

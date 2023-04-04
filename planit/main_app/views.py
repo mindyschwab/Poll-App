@@ -37,8 +37,22 @@ def events_detail(request, event_id):
 
 class EventCreate(CreateView):
     model = Event
-    fields = '__all__'
-    success_url = '/events/{event_id}'
+    fields = ['name', 'who', 'what', 'where', 'when', 'why']
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+
+class EventUpdate(UpdateView):
+    model = Event
+    # Let's disallow the renaming of a cat by excluding the name field!
+    fields = ['name', 'who', 'what', 'where', 'when', 'why']
+
+
+class EventDelete(DeleteView):
+    model = Event
+    success_url = '/events/'
 
 # *************** Group Views ****************
 
@@ -69,14 +83,14 @@ class GroupDelete(DeleteView):
 def assoc_group(request, event_id, group_id):
     Event.objects.get(id=event_id).groups.add(group_id)
     return redirect('home')
-  # delete line above and uncomment line below to redirect to events details page once created
+    # delete line above and uncomment line below to redirect to events details page once created
     # return redirect('detail', event_id=event_id)
 
 
 def remove_group(request, event_id, group_id):
     Event.objects.get(id=event_id).groups.remove(group_id)
     return redirect('home')
-  # delete line above and uncomment line below to redirect to events details page once created
+    # delete line above and uncomment line below to redirect to events details page once created
     # return redirect('detail', event_id=event_id)return redirect('detail', event_id=event_id)
 
 
