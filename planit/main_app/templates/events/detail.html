@@ -11,10 +11,10 @@
                 <p>Who: {{ event.who }} </p>
                 <p>When: {{ event.when }} </p>
             </div>
-            <div class="card-action">
+           <div class="card-action">
                 <a href="{% url 'events_update' event.id %}">Edit</a>
                 <a href="{% url 'events_delete' event.id %}">Delete</a>
-            </div>
+            </div> 
         </div>
 
 </div>
