@@ -61,7 +61,11 @@ class EventDelete(DeleteView):
 class GroupList(ListView):
     model = Group
 
+    def user(request):
+        context = { 'request': request, }
+        return render(request, 'group_list.html', context)
 
+    
 class GroupDetail(DetailView):
     model = Group
 
