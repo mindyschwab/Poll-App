@@ -31,9 +31,9 @@ def events_index(request):
 
 
 def events_detail(request, event_id):
-    events = Event.objects.get(id=event_id)
+    event = Event.objects.get(id=event_id)
     return render(request, 'events/detail.html', {
-        'events': events
+        'event': event
     })
 
 
@@ -62,10 +62,10 @@ class GroupList(ListView):
     model = Group
 
     def user(request):
-        context = { 'request': request, }
+        context = {'request': request, }
         return render(request, 'group_list.html', context)
 
-    
+
 class GroupDetail(DetailView):
     model = Group
 
