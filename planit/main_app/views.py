@@ -31,6 +31,7 @@ def events_index(request):
 
 
 def events_detail(request, event_id):
+    events = Event.objects.get(id=event_id)
     return render(request, 'events/detail.html', {
         'events': events
     })
@@ -47,7 +48,6 @@ class EventCreate(CreateView):
 
 class EventUpdate(UpdateView):
     model = Event
-    # Let's disallow the renaming of a cat by excluding the name field!
     fields = ['name', 'who', 'what', 'where', 'when', 'why']
 
 
