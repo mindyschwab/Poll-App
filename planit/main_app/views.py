@@ -22,6 +22,8 @@ def about(request):
 
 
 def events_index(request):
+    events = Event.objects.all()
+    # events = Event.filter(user=request.user)
     # We pass data to a template very much like we did in Express!
     return render(request, 'events/index.html', {
         'events': events
@@ -29,9 +31,8 @@ def events_index(request):
 
 
 def events_detail(request, event_id):
-    event = Event.objects.get(id=event_id)
     return render(request, 'events/detail.html', {
-        'event': event
+        'events': events
     })
 
 
