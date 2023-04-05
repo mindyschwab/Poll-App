@@ -7,20 +7,6 @@
         <h1>Add an Event</h1>
     {% endif %}
   <!-- Leaving the action empty makes the form post to the same url used to display it -->
-<<<<<<< HEAD
-    <!-- Django will automatically generate the form fields based on the model -->
-    <label for ="what">Event Name:</label>
-    {{ form.what }}
-    <label for ="when">Date:</label>
-    <input type="date" name="when" id="when" value="{{ object.when|date:'Y-m-d' }}">
-    <label for ="why">Description:</label>
-    {{ form.why }}
-    <label for ="where">Location:</label>
-    {{ form.where }}
-    <label for ="who">Attendees:</label>
-    {{ form.who }}
-    <input type="submit" value="Submit!" class="btn">
-=======
   <form action="" method="POST" style="margin-top: 100px; background-color: white;">
     <!-- Django requires the following for security purposes -->
     {% csrf_token %}
@@ -29,7 +15,6 @@
       {{ form.as_table }}
     </table>
     <input type="submit" value="Submit" class="btn">
->>>>>>> f4502418b725194f910279f140ad3cdbf1b770c9
   </form>
 
 <script>
