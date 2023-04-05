@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Add Poll</h1>
+
+<form action="" method="POST">
+
+{% csrf_token %}
+
+<label for="question">Enter Poll Question:</label>
+{% render_field %}
+<button class="btn">Add Poll</button>
+
+</form>
+
+{% endblock %}
+    
