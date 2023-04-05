@@ -118,3 +118,12 @@ def signup(request):
     form = UserCreationForm()
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
+
+
+# *************** Poll Views ****************
+
+def polls_detail(request, poll_id):
+    poll = Poll.objects.get(id=poll_id)
+    return render(request, 'polls/detail.html', {
+        'poll': poll
+    })
