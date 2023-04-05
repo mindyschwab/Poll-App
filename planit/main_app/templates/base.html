@@ -7,27 +7,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PlanIt!</title>
+    <title>PlanIt</title>
     <!-- using the materialize framework -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header class="navbar-fixed">
         <nav>
-            <div class="nav-wrapper">
-                <ul>
-                    <li><a href="{% url 'home' %}" class="left brand-logo">PlanIt!</a></li>
+            <div class="navbar">
+                <ul id="navbarContainer">
+                    <li><a href="{% url 'home' %}" id="navBtn">Plan<span class="it">It</span></a></li>
                     <a href="#" data-target="mobile-links" class=" right sidenav-trigger"><i
                             class="material-icons">menu</i></a>
                 </ul>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{% url 'about' %}">About</a></li>
+                <ul class="right hide-on-med-and-down" id="navbarContainer">
+                    <li><a href="{% url 'about' %}" id="navBtn">About</a></li>
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'index' %}">My Events</a></li>
                     <li><a href="{% url 'events_create' %}">Add an Event</a></li>
@@ -35,13 +36,13 @@
                     <li><a href="{% url 'groups_create' %}">Add a Group</a></li>
                     <li><a href="{% url 'logout' %}">Log Out</a></li>
                     {% else %}
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    <li><a href="{% url 'signup' %}" class="authBtn btn-small">Sign Up</a></li>
+                    <li><a href="{% url 'login' %}" class="authBtn btn-small">Log In</a></li>
                     {% endif %}
                 </ul>
             </div>
         </nav>
-    </header>
+        
     <ul class="sidenav" id="mobile-links">
         <li><a href="{% url 'about' %}">About</a></li>
             {% if user.is_authenticated %}
@@ -62,9 +63,9 @@
         {% endblock %}
     </main>
 
-    <footer class="page-footer">
-        <div>All Rights Reserved, &copy; 2023 SEI Mariposa Group 4 &nbsp;</div>
-        <div>Jonah Angelo | Jeremiah Broom | Mindy Schwabenbauer | Korbin Westerfield &nbsp;</div>
+    <footer class="footerContainer">
+        <div class="footerText">All Rights Reserved, <a class="footerText"> &copy; Plan<span class="it">It</span> | 20<span class="it">23</span></div>
+        <div class="footerText">Jonah Angelo | Jeremiah Broom | Mindy Schwabenbauer | Korbin Westerfield &nbsp;</div>
     </footer>
 
     <!-- Source for navnar using jquery:https://www.youtube.com/watch?v=5gHr8RfB0zs -->
