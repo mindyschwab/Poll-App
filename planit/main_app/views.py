@@ -40,6 +40,7 @@ def events_detail(request, event_id):
 class EventCreate(CreateView):
     model = Event
     fields = ['name', 'who', 'what', 'where', 'when', 'why']
+    success_url = '/events/'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -117,3 +118,12 @@ def signup(request):
     form = UserCreationForm()
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
+
+
+# *************** Poll Views ****************
+
+def polls_detail(request, poll_id):
+    poll = Poll.objects.get(id=poll_id)
+    return render(request, 'polls/detail.html', {
+        'poll': poll
+    })
