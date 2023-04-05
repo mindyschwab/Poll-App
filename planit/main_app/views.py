@@ -40,6 +40,7 @@ def events_detail(request, event_id):
 class EventCreate(CreateView):
     model = Event
     fields = ['name', 'who', 'what', 'where', 'when', 'why']
+    success_url = '/events/'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
