@@ -64,6 +64,25 @@ nav {
 
 /* CONTENT */
 /* ------------------------------------------ */
+@media screen and (max-width: 727px) {
+    .contentBtn {
+        color: #124569;
+        text-decoration: none;
+        background-color: transparent;
+        position: absolute;
+        left: 0;
+        top: 45% !important;
+        /* bottom: %; */
+        width: 100vw;
+    }
+    
+    .contentBtn:hover {
+        color: #7589ad;
+        text-decoration: none;
+        background-color: transparent;
+    }
+}
+
 .homeTitle {
     color: white;
     text-align: center;
@@ -73,8 +92,10 @@ nav {
     top: 25%;
     left: 0;
     bottom: 65%;
-    width: 100vw;
+    width: 80vw;
     z-index: 4;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .aboutTitle {
