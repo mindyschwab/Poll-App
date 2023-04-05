@@ -1,20 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="mainContent">
+    <h1 class="homeTitle">Welcome to Plan<span class="it">It</span></h1>
+         {% if user.is_authenticated %}
+            <div class="contentBtnDiv">
+                <a href="{% url 'groups_index' %}" class="contentBtn">View Events</a>
+            </div>
+        {% else %}
+            <div class="contentBtnDiv">
+                <a href="{% url 'signup' %}" class="contentBtn">Sign up to get Started</a>
+            </div>
+        {% endif %}
+</div>
 <section>
-    <div class="mainContent">
-        <h1 class="homeTitle">Welcome to Plan<span class="it">It</span></h1>
-             {% if user.is_authenticated %}
-                <div class="contentBtnDiv">
-                    <a href="{% url 'groups_index' %}" class="contentBtn">View Events</a>
-                </div>
-            {% else %}
-                <div class="contentBtnDiv">
-                    <a href="{% url 'signup' %}" class="contentBtn">Sign up to get Started</a>
-                </div>
-            {% endif %}
-        </div>
     <div class="stars1"></div>
     <div class="stars2"></div>
     <div class="stars3"></div>
