@@ -4,10 +4,10 @@
 
 <div class="container">
     <div class="row">
-        <h1>Poll: {{% event.poll.question %}}</h1>
-        <p>Option 1:  {{ poll.choice_one }} </p>
-        <p>Option 2: {{ poll.choice_two }} </p>
-        <p>Option 3: {{ poll.choice_three }} </p>
+        <div class="col s12"><h1>Poll: {{% event.poll.question %}}</h1></div>
+        <div class="col s6"><p>Option 1:  {{ poll.choice_one }} </p></div>
+        <div class="col s6"><p>Option 2: {{ poll.choice_two }} </p>
+        <div class="col s6"><p>Option 2: {{ poll.choice_three }} </p>
     </div>
 </div>
 
