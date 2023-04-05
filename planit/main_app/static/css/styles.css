@@ -49,6 +49,19 @@ nav {
     text-decoration: none;
 }
 
+.sidenav {
+    background-color: #0D324D;
+}
+
+.whiteText {
+    color: white !important;
+}
+
+.whiteText:hover {
+    color: white !important;
+    background-color: #7589ad !important;
+}
+
 /* CONTENT */
 /* ------------------------------------------ */
 .homeTitle {
