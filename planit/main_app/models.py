@@ -31,9 +31,14 @@ class Event(models.Model):
 
 class Poll(models.Model):
     question = models.CharField(max_length=250)
-    choice_one = models.CharField(max_length=100)
-    choice_two = models.CharField(max_length=100)
-    choice_three = models.CharField(max_length=100)
+    choice_one = models.CharField(max_length=100, null=True)
+    choice_two = models.CharField(max_length=100, null=True)
+    choice_three = models.CharField(max_length=100, null=True)
+    choice_one_count = models.IntegerField(default=0, null=True)
+    choice_two_count = models.IntegerField(default=0, null=True)
+    choice_three_count = models.IntegerField(default=0, null=True)
+    
+    event= models.ForeignKey(Event, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.question}: ({self.choice_one}, {self.choice_two}, {self.choice_three})'
@@ -49,4 +54,4 @@ class Group(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'group_id': self.id})
+        return reverse('groups_index')
