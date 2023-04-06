@@ -38,7 +38,7 @@ class Poll(models.Model):
     choice_two_count = models.IntegerField(default=0, null=True)
     choice_three_count = models.IntegerField(default=0, null=True)
     
-    event= models.ForeignKey(Event, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.question}: ({self.choice_one}, {self.choice_two}, {self.choice_three})'
