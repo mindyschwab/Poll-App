@@ -1025,10 +1025,12 @@ textarea:focus {
 
 .moon {
     position: fixed;
+    left: 20%;
+    right: 20%;
     border-radius: 50%;
     width: 500px;
     height: 500px;
-    background: url(./moon.jpg);
+    background: url(https://astrogeology.usgs.gov/cache/images/019d45da5baa0d0ff374bf01bfe7ea6a_Kaguya_MI_refl_b2_750nm_global_1024.jpg);
     background-repeat: repeat-x;
     background-size: cover;
     animation: moon-rotation 90s linear infinite;

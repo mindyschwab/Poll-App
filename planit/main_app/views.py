@@ -35,16 +35,17 @@ def events_detail(request, event_id):
     event = Event.objects.get(id=event_id)
     poll_form=PollForm()
     return render(request, 'events/detail.html', {
-        'event': event, 'poll_form': poll_form
+        'event': event, 
+        'poll_form': poll_form
     })
 
 def add_poll(request, event_id):
-        form = PollForm(request.POST)
-        if form.is_valid():
-            new_poll = form.save(commit=False)
-            new_poll.event_id = event_id
-            new_poll.save()
-        return redirect('detail', event_id=event_id)
+    form = PollForm(request.POST)
+    if form.is_valid():
+        new_poll = form.save(commit=False)
+        new_poll.event_id = event_id
+        new_poll.save()
+    return redirect('detail', event_id=event_id)
 
 class EventCreate(CreateView):
     model = Event
