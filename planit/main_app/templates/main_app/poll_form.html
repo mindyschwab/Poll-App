@@ -9,7 +9,7 @@
 {% csrf_token %}
 
 <label for="question">Enter Poll Question:</label>
-{% render_field %}
+{% comment %} {% render_field %} {% endcomment %}
 <button class="btn">Add Poll</button>
 
 </form>

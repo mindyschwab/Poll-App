@@ -129,10 +129,13 @@ def polls_detail(request, poll_id):
         'poll': poll, 
     })
 
-def polls_create(request, event_id):
-    form = PollForm(request.POST)
-    if form.is_valid():
-        new_poll = form.save(commit=False)
-        new_poll.event_id = event_id
-        new_poll.save()
-        return redirect('detail', event_id=event_id)
+# def poll_form(request, event_id):
+#     form = PollForm(request.POST)
+#     if form.is_valid():
+#         new_poll = form.save(commit=False)
+#         new_poll.event_id = event_id
+#         new_poll.save()
+#         return redirect('detail', event_id=event_id)
+
+def poll_form(request):
+    return render(request, 'main_app/poll_form.html')
