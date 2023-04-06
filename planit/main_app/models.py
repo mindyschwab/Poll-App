@@ -5,6 +5,17 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+class Poll(models.Model):
+    question = models.CharField(max_length=250)
+    choice_one = models.CharField(max_length=100, null=True)
+    choice_two = models.CharField(max_length=100, null=True)
+    choice_three = models.CharField(max_length=100, null=True)
+    choice_one_count = models.IntegerField(default=0, null=True)
+    choice_two_count = models.IntegerField(default=0, null=True)
+    choice_three_count = models.IntegerField(default=0, null=True)
+
+    def __str__(self):
+        return f'{self.question}: ({self.choice_one}, {self.choice_two}, {self.choice_three})'
 
 class Event(models.Model):
     name = models.CharField(max_length=100)
@@ -16,11 +27,10 @@ class Event(models.Model):
     # will need to uncomment this once the superuser/admin access is created
     # adds a user_id foreignkey colum in the DB
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-
     # class Meta:
     #     ordering = ['-date']
     # creates a Many to Many Relationship with Poll model
-    # polls = models.ManyToManyField(Poll)
+    polls = models.ManyToManyField(Poll)
 
     def __str__(self):
         return self.what
@@ -29,26 +39,13 @@ class Event(models.Model):
         return reverse('detail', kwargs={'event_id': self.id})
 
 
-class Poll(models.Model):
-    question = models.CharField(max_length=250)
-    choice_one = models.CharField(max_length=100, null=True)
-    choice_two = models.CharField(max_length=100, null=True)
-    choice_three = models.CharField(max_length=100, null=True)
-    choice_one_count = models.IntegerField(default=0, null=True)
-    choice_two_count = models.IntegerField(default=0, null=True)
-    choice_three_count = models.IntegerField(default=0, null=True)
-    
-    event= models.ForeignKey(Event, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f'{self.question}: ({self.choice_one}, {self.choice_two}, {self.choice_three})'
 
 
 class Group(models.Model):
     name = models.CharField(max_length=50)
     creator = models.CharField(max_length=100)
     # will need to uncomment this once the superuser/admin access is created
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
