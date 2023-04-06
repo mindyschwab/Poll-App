@@ -253,24 +253,22 @@ hr {
     z-index: 5;
 }
 
+.datepicker-container {
+    border: 1px solid white;
+}
+
 .datepicker-date-display {
     background-color: #0D324D ;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-    border-left: 1px solid white;
 }
 
 .datepicker-calendar {
     color: white;
     background-color: black;
-    border-top: 1px solid white;
 }
 
 .datepicker-calendar-container {
     color: white;
     background-color: black;
-    border-bottom: 1px solid white;
-    border-right: 1px solid white;
 }
 
 .datepicker-footer {
@@ -279,6 +277,23 @@ hr {
 
 .datepicker-day-button:focus {
     background-color: #7F5A83;
+}
+
+.datepicker-day-button:hover {
+    background-color: #7F5A83;
+}
+
+.is-today {
+    color: #7F5A83 !important;
+}
+
+.is-selected {
+    background-color: #7F5A83 !important;
+    color: white !important;
+}
+
+.is-today:hover {
+    color: white !important;
 }
 
 .btn-flat {
