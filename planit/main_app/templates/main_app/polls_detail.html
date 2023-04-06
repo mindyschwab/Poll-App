@@ -2,6 +2,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+{% for poll in polls %}
 <div class="row">
     <h3>Cast Your Vote</h3>
             <div class="row">
@@ -42,4 +44,5 @@
         </div>
     </div>
 </div>
+{% endfor %}
 {% endblock %}

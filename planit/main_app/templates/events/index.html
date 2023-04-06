@@ -3,13 +3,15 @@
 
 <h1 class="myEventsTitle">My <span class="it">Events</span></h1>
 {% for event in events %}
+<a href="{% url 'detail' event.id %}">
   <div class="card">
     <div class="card-content">
-      <a href="{% url 'detail' event.id %}"><span class="card-title">{{ event.name }}</span></a>
+      <span class="card-title">{{ event.name }}</span>
       <p class="cardDetails">Who: {{ event.who }}</p>
         <p class="cardDetails">When: {{ event.when }}</p>
     </div>
   </div>
+</a>
 {% endfor %}
 
 

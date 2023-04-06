@@ -293,7 +293,7 @@ hr {
     top: 10%;
     left: 10%;
     right: 10%;
-    margin-bottom: 90px;
+    padding-bottom: 60px;
 }
 
 .btn-flat {
@@ -1023,6 +1023,34 @@ textarea:focus {
 
 /* BACKGOURND TUTORIAL: https://youtu.be/aywzn9cf-_U */
 
+.moon {
+    position: fixed;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    background: url(./moon.jpg);
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moon-rotation 90s linear infinite;
+    box-shadow: inset 60px 0 40px black,
+        inset 160px 0 60px rgba(0, 0, 0, .9),
+        inset -160px 0 60px rgba(248, 248, 213, 0.2);
+}
+
+.moon:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: brown 1px solid;
+    border-radius: 50%;
+    width: 495px;
+    height: 495px;
+    box-shadow: -60px 0 50px black;
+}
+
+
 /* Footer */
 /* ------------------------------------------ */
 footer {
@@ -1059,5 +1087,15 @@ footer {
 
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes moon-rotation {
+    from {
+        background-position: -500px center;
+    }
+
+    to {
+        background-position: 496px center;
     }
 }
