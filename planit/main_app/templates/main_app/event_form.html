@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="addEventContainer">
     {% if object%}
         <h1 class="aboutTitle">Edit {{ object.name }}</h1>
     {% else %}
@@ -16,7 +17,7 @@
     </table>
     <input type="submit" value="Submit" class="btn">
   </form>
-
+</div>
 <script>
   const dateEl = document.getElementById('id_when');
   // M is Materialize's global variable
