@@ -26,10 +26,17 @@
 <form action="" method="POST">
     {% csrf_token %}
     <div class="row">
+<<<<<<< HEAD
         {% for poll in polls %}
             <div class="card">
                 <div class="card-content">
                 <a href="{% url 'polls_detail' poll.id %}">Poll Details</a>
+=======
+        {% for poll in event.poll_set.all %}
+            <div class="card">
+                <div class="card-content">
+                {% comment %} <a href="{% url 'polls_detail' poll.id %}">Poll Details</a> {% endcomment %}
+>>>>>>> 7c360829e07cfc757b39d4c843d4e3f23ca8ff55
                     <span class="card-title">{{ poll.question }}</span>
                     <p>Option 1:  {{ poll.choice_one }} </p>
                     <p>Option 2: {{ poll.choice_two }} </p>
@@ -43,6 +50,5 @@
             </div>
     </div>
 </form>
-
 
 {% endblock %}
