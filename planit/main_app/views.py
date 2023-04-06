@@ -4,6 +4,7 @@ from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from .models import Event, Group, Poll
+from .forms import CreatePollForm
 
 # Create your views here.
 events = []
@@ -127,3 +128,13 @@ def polls_detail(request, poll_id):
     return render(request, 'polls/detail.html', {
         'poll': poll
     })
+
+def add_poll(request, event_id):
+    if request.method == 'POST':
+        form = CreatePollForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('detail', event_id=event_id)
+    else:
+        form = CreatePollForm()
+    return render(request, 'polls/create.html', {

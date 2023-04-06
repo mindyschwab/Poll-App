@@ -24,5 +24,5 @@ urlpatterns = [
          views.GroupDelete.as_view(), name='groups_delete'),
     path('accounts/signup/', views.signup, name='signup'),
     path('polls/<int:poll_id/', views.polls_detail, name='polls_detail'),
-#     path('polls/create/', views.PollCreate.as_view(), name='polls_create'),
+    path('polls/create/', views.PollCreate.as_view(), name='polls_create'),
 ]
