@@ -13,6 +13,8 @@ class Poll(models.Model):
     choice_one_count = models.IntegerField(default=0, null=True)
     choice_two_count = models.IntegerField(default=0, null=True)
     choice_three_count = models.IntegerField(default=0, null=True)
+    
+    event = models.ForeignKey('Event', on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.question}: ({self.choice_one}, {self.choice_two}, {self.choice_three})'
@@ -32,8 +34,6 @@ class Event(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     # class Meta:
     #     ordering = ['-date']
-    # creates a Many to Many Relationship with Poll model
-    polls = models.ManyToManyField(Poll)
 
     def __str__(self):
         return self.what
