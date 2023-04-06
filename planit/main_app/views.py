@@ -136,3 +136,13 @@ def polls_create(request, event_id):
         new_poll.event_id = event_id
         new_poll.save()
         return redirect('detail', event_id=event_id)
+
+def add_poll(request, event_id):
+    if request.method == 'POST':
+        form = CreatePollForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('detail', event_id=event_id)
+    else:
+        form = CreatePollForm()
+    return render(request, 'polls/create.html', {
