@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 class="aboutTitle">My Events</h1>
+<h1 class="myEventsTitle">My <span class="it">Events</span></h1>
 {% for event in events %}
   <div class="card">
     <div class="card-content">
       <a href="{% url 'detail' event.id %}"><span class="card-title">{{ event.name }}</span></a>
-      <p>Who: {{ event.who }}</p>
-        <p>When: {{ event.when }}</p>
+      <p class="cardDetails">Who: {{ event.who }}</p>
+        <p class="cardDetails">When: {{ event.when }}</p>
     </div>
   </div>
 {% endfor %}

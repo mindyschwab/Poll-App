@@ -72,10 +72,9 @@ nav {
         position: absolute;
         left: 0;
         top: 45% !important;
-        /* bottom: %; */
         width: 100vw;
     }
-    
+
     .contentBtn:hover {
         color: #7589ad;
         text-decoration: none;
@@ -96,22 +95,11 @@ nav {
         background-color: transparent;
         z-index: 3;
     }
-    
+
     .aboutParagraphContainer {
         height: 80%;
     }
 
-    section {
-        display: none;
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        justify-content: center;
-        align-items: center;
-        left: 0;
-        top: 0;
-    }
 }
 
 .homeTitle {
@@ -119,7 +107,7 @@ nav {
     text-align: center;
     background-color: transparent;
     margin-bottom: 5px;
-    position: absolute;
+    position: fixed;
     top: 25%;
     left: 0;
     bottom: 65%;
@@ -135,9 +123,9 @@ nav {
     position: relative;
     left: 20%;
     right: 40%;
-    top: 40px;
     width: 60%;
     z-index: 3;
+    margin: 0;
 }
 
 .aboutContent {
@@ -145,12 +133,12 @@ nav {
     color: white;
     left: 5%;
     right: 5%;
-    top: 17%;
     border-top: 3px solid #0D324D;
     padding: 10px 30px 90px 30px;
     font-size: 17px;
     background-color: transparent;
     z-index: 3;
+
 }
 
 .aboutParagraphContainer {
@@ -176,7 +164,7 @@ nav {
 .signUpContainer {
     color: #7589ad;
     width: 60%;
-    position: absolute;
+    position: fixed;
     align-items: center;
     justify-content: center;
     left: 20%;
@@ -186,13 +174,15 @@ nav {
     z-index: 3;
     margin-top: 20%;
     margin-bottom: 20%;
+    top: 0;
 }
 
 label {
     color: white;
 }
 
-input[type=text], input[type=password] {
+input[type=text],
+input[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -200,17 +190,18 @@ input[type=text], input[type=password] {
     border: none;
     background: #f1f1f1;
     color: white;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', sans-serif !important;
 }
-  
-input[type=text]:focus, input[type=password]:focus {
+
+input[type=text]:focus,
+input[type=password]:focus {
     background-color: rgb(255, 255, 255, .5);
     outline: none;
     border-bottom: 1.5px solid white !important;
     color: white;
     font-family: 'Orbitron', sans-serif;
 }
-  
+
 hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
@@ -241,36 +232,35 @@ hr {
 .logInContainer {
     color: white;
     width: 60%;
-    position: absolute;
+    position: fixed;
     align-items: center;
     justify-content: center;
     left: 20%;
     right: 20%;
-    margin-top: 30%;
+    margin-top: 20%;
     margin-bottom: 40%;
     background-color: #0D324D;
     padding: 15px;
     z-index: 5;
+    top: 0;
+}
+
+.datepicker-container {
+    border: 1px solid white;
 }
 
 .datepicker-date-display {
-    background-color: #0D324D ;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-    border-left: 1px solid white;
+    background-color: #0D324D;
 }
 
 .datepicker-calendar {
     color: white;
     background-color: black;
-    border-top: 1px solid white;
 }
 
 .datepicker-calendar-container {
     color: white;
     background-color: black;
-    border-bottom: 1px solid white;
-    border-right: 1px solid white;
 }
 
 .datepicker-footer {
@@ -281,12 +271,165 @@ hr {
     background-color: #7F5A83;
 }
 
+.datepicker-day-button:hover {
+    background-color: #7F5A83;
+}
+
+.is-today {
+    color: #7F5A83 !important;
+}
+
+.is-selected {
+    background-color: #7F5A83 !important;
+    color: white !important;
+}
+
+.is-today:hover {
+    color: white !important;
+}
+
+.container {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    margin-bottom: 90px;
+}
+
 .btn-flat {
     color: #7F5A83;
 }
 
+th,
+td {
+    border-bottom: 1px solid #0D324D;
+}
+
+textarea {
+    width: 100%;
+    padding-bottom: 15px;
+    font-size: 16px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border-top: #0D324D;
+    border-left: #0D324D;
+    border-right: #0D324D;
+    border-bottom: 1px solid #9e9e9e;
+    color: white !important;
+    font-family: 'Orbitron', sans-serif !important;
+    resize: none !important;
+    overflow: hidden !important;
+}
+
+textarea:focus {
+    width: 100%;
+    padding-bottom: 15px;
+    font-size: 16px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border-top: #0D324D;
+    border-left: #0D324D;
+    border-right: #0D324D;
+    border-bottom: 1px solid white;
+    outline: none !important;
+    color: white !important;
+    font-family: 'Orbitron', sans-serif !important;
+    resize: none !important;
+    overflow: hidden !important;
+}
+
+.addEventTitle {
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid white;
+    margin-top: 7px;
+    margin-bottom: 0;
+    padding-bottom: 7px;
+}
+
+.addEventContainer {
+    position: fixed;
+    left: 20%;
+    right: 20%;
+    background-color: #0D324D;
+    padding-bottom: 7px;
+    top: 15%;
+    border: 1px solid white;
+    border-radius: 2px;
+}
+
+.addGroupTitle {
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid white;
+    margin-top: 7px;
+    margin-bottom: 0;
+    padding-bottom: 7px;
+}
+
+.myEventsTitle {
+    text-align: center;
+    color: white;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    margin: 0;
+    border-bottom: 2px solid #124569;
+    padding-bottom: 7px;
+}
+
+.card {
+    border: 1px solid white;
+    border-radius: 2px;
+}
+
+.card-content {
+    background-color: #0D324D;
+    border-radius: 2px 2px 0 0 !important;
+}
+
+.card-title {
+    color: white;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #124569;
+}
+
+.cardDetails {
+    color: #7589ad;
+}
+
+.card-action {
+    background-color: #124569 !important;
+    border-radius: 0px 0px 2px 2px !important;
+}
+
 .it {
     color: #7F5A83;
+}
+
+.itLight {
+    color: white !important;
+    background-color: #7F5A83 !important;
+    padding: 11px 24px !important;
+    width: 50% !important;
+    margin: 2.5px !important;
+}
+
+.itLight:hover {
+    color: white !important;
+    background-color: #ab76b1 !important;
+}
+
+.deleteBtn {
+    color: white !important;
+    background-color: rgb(211, 0, 0) !important;
+    padding: 11px 24px !important;
+    width: 50% !important;
+}
+
+.deleteBtn:hover {
+    color: white !important;
+    background-color: rgba(255, 0, 0) !important;
 }
 
 .contentBtnDiv {
@@ -298,11 +441,12 @@ hr {
     color: #124569;
     text-decoration: none;
     background-color: transparent;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 37.5%;
     bottom: 62.5%;
     width: 100vw;
+    z-index: 4;
 }
 
 .contentBtn:hover {
@@ -311,15 +455,13 @@ hr {
     background-color: transparent;
 }
 
-section {
-    position: absolute;
-    width: 100%;
+.stars {
+    position: fixed;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    left: 0;
     top: 0;
+    left: 0;
 }
 
 .stars1 {

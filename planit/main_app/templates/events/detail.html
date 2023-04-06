@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Event Details</h1>
+<h1 class="myEventsTitle">Event <span class="it">Details</span></h1>
 
 <div class="row">
         <div class="card">
             <div class="card-content">
                 <span class="card-title">{{ event.name }}</span>
-                <p>Who: {{ event.who }} </p>
-                <p>What: {{ event.what }}</p>
-                <p>When: {{ event.when }} </p>
-                <p>Where: {{ event.where }} </p>
-                <p>Why: {{event.why}} </p>
+                <p class="cardDetails">Who: {{ event.who }} </p>
+                <p class="cardDetails">What: {{ event.what }}</p>
+                <p class="cardDetails">When: {{ event.when }} </p>
+                <p class="cardDetails">Where: {{ event.where }} </p>
+                <p class="cardDetails">Why: {{event.why}} </p>
             </div>
            <div class="card-action">
-                <a href="{% url 'events_update' event.id %}">Edit</a>
-                <a href="{% url 'events_delete' event.id %}">Delete</a>
+                <a class="itLight" href="{% url 'events_update' event.id %}">Edit</a>
+                <a class="deleteBtn" href="{% url 'events_delete' event.id %}">Delete</a>
             </div> 
         </div>
 
