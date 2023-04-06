@@ -204,7 +204,7 @@ input[type=text], input[type=password] {
 }
   
 input[type=text]:focus, input[type=password]:focus {
-    background-color: #7589ad;
+    background-color: rgb(255, 255, 255, .5);
     outline: none;
     border-bottom: 1.5px solid white !important;
     color: white;
@@ -251,6 +251,38 @@ hr {
     background-color: #0D324D;
     padding: 15px;
     z-index: 5;
+}
+
+.datepicker-date-display {
+    background-color: #0D324D ;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.datepicker-calendar {
+    color: white;
+    background-color: black;
+    border-top: 1px solid white;
+}
+
+.datepicker-calendar-container {
+    color: white;
+    background-color: black;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.datepicker-footer {
+    background-color: black;
+}
+
+.datepicker-day-button:focus {
+    background-color: #7F5A83;
+}
+
+.btn-flat {
+    color: #7F5A83;
 }
 
 .it {
