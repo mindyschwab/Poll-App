@@ -28,13 +28,13 @@
                             class="material-icons">menu</i></a>
                 </ul>
                 <ul class="right hide-on-med-and-down" id="navbarContainer">
-                    <li><a href="{% url 'about' %}" id="navBtn">About</a></li>
+                    <li><a class="whiteText" href="{% url 'about' %}" id="navBtn">About</a></li>
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'index' %}">My Events</a></li>
-                    <li><a href="{% url 'events_create' %}">Add an Event</a></li>
-                    <li><a href="{% url 'groups_index' %}">My Groups</a></li>
-                    <li><a href="{% url 'groups_create' %}">Add a Group</a></li>
-                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    <li><a class="whiteText" href="{% url 'index' %}">My Events</a></li>
+                    <li><a class="whiteText" href="{% url 'events_create' %}">Add an Event</a></li>
+                    <li><a class="whiteText" href="{% url 'groups_index' %}">My Groups</a></li>
+                    <li><a class="whiteText" href="{% url 'groups_create' %}">Add a Group</a></li>
+                    <li><a class="whiteText" href="{% url 'logout' %}">Log Out</a></li>
                     {% else %}
                     <li><a href="{% url 'signup' %}" class="authBtn btn-small">Sign Up</a></li>
                     <li><a href="{% url 'login' %}" class="authBtn btn-small">Log In</a></li>
@@ -44,16 +44,16 @@
         </nav>
         
     <ul class="sidenav" id="mobile-links">
-        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a class="whiteText" href="{% url 'about' %}">About</a></li>
             {% if user.is_authenticated %}
-                <li><a href="{% url 'index' %}">My Events</a></li>
-                <li><a href="{% url 'events_create' %}">Add an Event</a></li>
-                <li><a href="{% url 'groups_index' %}">My Groups</a></li>
-                <li><a href="{% url 'groups_create' %}">Add a Group</a></li>
-                <li><a href="{% url 'logout' %}">Log Out</a></li>
+                <li><a class="whiteText" href="{% url 'index' %}">My Events</a></li>
+                <li><a class="whiteText" href="{% url 'events_create' %}">Add an Event</a></li>
+                <li><a class="whiteText" href="{% url 'groups_index' %}">My Groups</a></li>
+                <li><a class="whiteText" href="{% url 'groups_create' %}">Add a Group</a></li>
+                <li><a class="whiteText" href="{% url 'logout' %}">Log Out</a></li>
             {% else %} 
-                <li><a href="{% url 'signup' %}">Sign Up</a></li>   
-                <li><a href="{% url 'login' %}">Log In</a></li>
+                <li><a class="whiteText" href="{% url 'signup' %}">Sign Up</a></li>   
+                <li><a class="whiteText" href="{% url 'login' %}">Log In</a></li>
            {% endif %}
     </ul>
     <main class="container">
