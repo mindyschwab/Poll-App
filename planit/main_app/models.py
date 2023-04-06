@@ -22,7 +22,7 @@ class Event(models.Model):
     who = models.CharField(max_length=150)
     what = models.CharField(max_length=150)
     where = models.CharField(max_length=100)
-    when = models.DateField('event Date')
+    when = models.CharField(max_length=150)
     why = models.TextField(max_length=250)
     # will need to uncomment this once the superuser/admin access is created
     # adds a user_id foreignkey colum in the DB
