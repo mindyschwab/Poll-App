@@ -123,26 +123,45 @@ def signup(request):
 
 # *************** Poll Views ****************
 
-def polls_detail(request, poll_id):
-    poll = Poll.objects.get(id=poll_id)
-    return render(request, 'events/detail.html', {
-        'poll': poll, 
-    })
+class PollCreate(CreateView):
+    model = Poll
+    fields = ['question', 'choice_one', 'choice_two', 'choice_three']
+    success_url = '/polls_detail/'
 
-def polls_create(request, event_id):
-    form = PollForm(request.POST)
-    if form.is_valid():
-        new_poll = form.save(commit=False)
-        new_poll.event_id = event_id
-        new_poll.save()
-        return redirect('detail', event_id=event_id)
+# def polls_create(request, event_id):
+#     form = PollForm(request.POST)
+#     if form.is_valid():
+#         new_poll = form.save(commit=False)
+#         new_poll.event_id = event_id
+#         new_poll.save()
+#         return redirect('detail', event_id=event_id)
 
-def add_poll(request, event_id):
-    if request.method == 'POST':
-        form = CreatePollForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('detail', event_id=event_id)
-    else:
-        form = CreatePollForm()
-    return render(request, 'polls/create.html', {
+# def add_poll(request, event_id):
+#     if request.method == 'POST':
+#         form = CreatePollForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('detail', event_id=event_id)
+#     else:
+#         form = CreatePollForm()
+#     return render(request, 'polls/create.html', {
+#     def form_valid(self, form):
+#         form.instance.user = self.request.user
+#         return super().form_valid(form)
+    
+#     def assoc_poll(request, event_id, poll_id):
+#         Event.objects.get(id=event_id).polls.add(poll_id)
+#         return redirect('home')
+        # delete line above and uncomment line below to redirect to events details page once created
+        # return redirect('detail', event_id=event_id)
+     
+class PollDetail(DetailView):
+    model = Poll
+
+class PollUpdate(UpdateView):
+    model = Poll
+    fields = '__all__'
+
+class PollDelete(DeleteView):
+    model = Poll
+    success_url = '/events/'
