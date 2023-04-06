@@ -3,9 +3,9 @@
 {% block content %}
 <div class="addEventContainer">
     {% if object%}
-        <h1 class="aboutTitle">Edit {{ object.name }}</h1>
+        <h1 class="addEventTitle">Edit {{ object.name }}</h1>
     {% else %}
-        <h1 class="aboutTitle">Add an Event</h1>
+        <h1 class="addEventTitle">Add an Event</h1>
     {% endif %}
   <!-- Leaving the action empty makes the form post to the same url used to display it -->
   <form action="" method="POST">
@@ -27,6 +27,19 @@
     setDefaultDate: true,
     autoClose: true
   });
+</script>
+
+<script>
+  $('textarea').on('paste input', function () {
+    if ($(this).outerHeight() > this.scrollHeight){
+        $(this).height(1)
+    }
+    while ($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))){
+        $(this).height($(this).height() + 1)
+    }
+  });
+
+  // autogrow textbox solution: https://stackoverflow.com/questions/4954252/css-textarea-that-expands-as-you-type-text
 </script>
 
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 class="aboutTitle">Group List</h1>
+<h1 class="myEventsTitle">Group <span class="it">List</span></h1>
 
 {% for group in group_list %}
   <a href="{% url 'groups_detail' group.id %}">
@@ -9,9 +9,9 @@
         <div class="card-content">
             <span class="card-title">{{ group.name }}</span>
             {% if request.user.is_authenticated %}
-            <p>Creator: {{ request.user.username }}</p>
+            <p class="cardDetails">Creator: {{ request.user.username }}</p>
             {% else %}
-            <p>Please log in to view who created this Group</p>
+            <p class="cardDetails">Please log in to view who created this Group</p>
             {% endif %}
         </div>
     </div>

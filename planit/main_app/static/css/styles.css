@@ -297,8 +297,131 @@ hr {
     color: #7F5A83;
 }
 
+th, td {
+    border-bottom: 1px solid #0D324D;
+}
+
+textarea {
+    width: 100%;
+    padding-bottom: 15px;
+    font-size: 16px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border-top: #0D324D;
+    border-left: #0D324D;
+    border-right: #0D324D;
+    border-bottom: 1px solid #9e9e9e;
+    color: white !important;
+    font-family: 'Orbitron', sans-serif !important;
+    resize: none !important;
+    overflow: hidden !important;
+}
+
+textarea:focus {
+    width: 100%;
+    padding-bottom: 15px;
+    font-size: 16px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border-top: #0D324D;
+    border-left: #0D324D;
+    border-right: #0D324D;
+    border-bottom: 1px solid white;
+    outline: none !important;
+    color: white !important;
+    font-family: 'Orbitron', sans-serif !important;
+    resize: none !important;
+    overflow: hidden !important;
+}
+
+.addEventTitle {
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid white;
+    margin-top: 7px;
+    margin-bottom: 0;
+}
+
+.addEventContainer {
+    position: fixed;
+    left: 20%;
+    right: 20%;
+    background-color: #0D324D;
+    padding-bottom: 7px;
+    top: 15%;
+}
+
+.addGroupTitle {
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid white;
+    margin-top: 7px;
+    margin-bottom: 0;
+    padding-bottom: 7px;
+}
+
+.myEventsTitle {
+    text-align: center;
+    color: white;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    margin: 0;
+    border-bottom: 2px solid #124569;
+    padding-bottom: 7px;
+}
+
+.card {
+    border: 1px solid white;
+    border-radius: 2px;
+}
+.card-content {
+    background-color: #0D324D;
+    border-radius: 2px 2px 0 0 !important;
+}
+
+.card-title {
+    color: white;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #124569;
+}
+
+.cardDetails {
+    color: #7589ad;
+}
+
+.card-action {
+    background-color: #124569 !important;
+    border-radius: 0px 0px 2px 2px !important;
+}
+
 .it {
     color: #7F5A83;
+}
+
+.itLight {
+    color: white !important;
+    background-color: #7F5A83 !important;
+    padding: 11px 24px !important;
+    width: 50% !important;
+    margin: 2.5px !important;
+}
+
+.itLight:hover {
+    color: white !important;
+    background-color: #ab76b1 !important;
+}
+
+.deleteBtn {
+    color: white !important;
+    background-color: rgb(211, 0, 0) !important;
+    padding: 11px 24px !important;
+    width: 50% !important;
+}
+
+.deleteBtn:hover {
+    color: white !important;
+    background-color: rgba(255, 0, 0) !important;
 }
 
 .contentBtnDiv {
