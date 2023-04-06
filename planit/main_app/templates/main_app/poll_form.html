@@ -9,8 +9,10 @@
 {% csrf_token %}
 
 <label for="question">Enter Poll Question:</label>
-{{ form.as_table }}
-<input type="submit" value="Submit" class="btn">
+{% render_field %}
+<button class="btn">Add Poll</button>
+
 </form>
 
 {% endblock %}
+    
