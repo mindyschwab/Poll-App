@@ -22,24 +22,24 @@
 </div>
 <br>
 <h2 style="color:white;">Polls: </h2>
-<a href="{% url 'polls_create' %}">Create a new poll</a>
+<a href="{% url 'poll_form' %}">Create a new poll</a>
 <form action="" method="POST">
     {% csrf_token %}
     <div class="row">
-        {% for poll in polls %}
+        {% comment %} {% for poll in event.poll_set.all %}
             <div class="card">
                 <div class="card-content">
                 {% comment %} <a href="{% url 'polls_detail' poll.id %}">Poll Details</a> {% endcomment %}
-                    <span class="card-title">{{ poll.question }}</span>
+                    {% comment %} <span class="card-title">{{ poll.question }}</span>
                     <p>Option 1:  {{ poll.choice_one }} </p>
                     <p>Option 2: {{ poll.choice_two }} </p>
-                    <p>Option 3: {{ poll.choice_three }} </p>
+                    <p>Option 3: {{ poll.choice_three }} </p> {% endcomment %}
                 </div>
-                {% endfor %}
+                {% comment %} {% endfor %} {% endcomment %}
                {% comment %} <div class="card-action">
                     <a href="{% url 'events_update' event.id %}">Edit</a>
                     <a href="{% url 'events_delete' event.id %}">Delete</a>
-                </div>  {% endcomment %}
+                </div>  {% endcomment %} 
             </div>
     </div>
 </form>
