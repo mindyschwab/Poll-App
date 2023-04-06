@@ -189,7 +189,7 @@ input[type=text], input[type=password] {
     border: none;
     background: #f1f1f1;
     color: white;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', sans-serif !important;
 }
   
 input[type=text]:focus, input[type=password]:focus {
@@ -340,6 +340,7 @@ textarea:focus {
     border-bottom: 1px solid white;
     margin-top: 7px;
     margin-bottom: 0;
+    padding-bottom: 7px;
 }
 
 .addEventContainer {
@@ -349,6 +350,8 @@ textarea:focus {
     background-color: #0D324D;
     padding-bottom: 7px;
     top: 15%;
+    border: 1px solid white;
+    border-radius: 2px;
 }
 
 .addGroupTitle {
