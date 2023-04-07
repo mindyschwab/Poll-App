@@ -32,7 +32,7 @@ class Poll(models.Model):
     choice_one_count = models.IntegerField(default=0, null=True)
     choice_two_count = models.IntegerField(default=0, null=True)
     choice_three_count = models.IntegerField(default=0, null=True)
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField('date published', default=date.today)
     
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
 

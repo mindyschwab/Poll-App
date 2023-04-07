@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from .models import Event, Group, Poll
 from .forms import PollForm
+from django.http import HttpResponse
 
 # Create your views here.
 events = []
@@ -145,14 +146,9 @@ class PollCreate(CreateView):
         return super().form_valid(form)
     
 
-     
-# class PollDetail(DetailView):
-#     model = Poll
-#     success_url = '/polls/'
-
 def polls_detail(request, poll_id):
     poll = Poll.objects.get(id=poll_id)
-    return render(request, 'main_app/polls_detail.html', {
+    return render(request, 'polls/polls_detail.html', {
         'poll': poll
     })
 
@@ -164,17 +160,37 @@ class PollDelete(DeleteView):
     model = Poll
     success_url = '/events/'
 
+def results(request, poll_id):
+    poll = Poll.objects.get(pk=poll_id)
+    context = {
+        'poll': poll
+    }
+    return render(request, 'polls/results.html', context)
+
 
 def vote(request, poll_id):
     poll = Poll.objects.get(pk=poll_id)
-    choice = request.POST.get('poll')
-    if choice == 'choice_one_count':
-        poll.choice_one_count += 1
-    elif choice == 'choice_two_count':
-        poll.choice_two_count += 1
-    elif choice == 'choice_three_count':
-        poll.choice_three_count += 1
-    poll.save()
-    return redirect('polls_detail', poll_id=poll_id)
+
+    if request.method == 'POST':
+
+        choice = request.POST('poll')
+        if choice == 'choice_one_count':
+            poll.choice_one_count += 1
+        elif choice == 'choice_two_count':
+            poll.choice_two_count += 1
+        elif choice == 'choice_three_count':
+            poll.choice_three_count += 1
+        else:
+            return HttpResponse(400, 'Invalid form option')
+        
+        poll.save()
+
+        return redirect('results', poll.id)
+    
+    context = {
+        'poll': poll
+    }
+
+    return render(request, 'polls/vote.html', context)
 
 

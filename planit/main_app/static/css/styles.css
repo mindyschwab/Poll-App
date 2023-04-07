@@ -1335,6 +1335,25 @@ textarea:focus {
     box-shadow: -60px 0 50px black;
 }
 
+/* planet background animation: https://youtu.be/iHJHxMZ0g-M */
+
+.shootingStar {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    height: 2px;
+    background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+    filter: drop-shadow(0 0 6px #699bff);
+    animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+    z-index: 3;
+}
+
+.shootingStar:nth-child(1) {
+    top: calc(20% - 200px);
+    left: calc(20% - 300px);
+    animation-delay: 650ms;
+}
+
 /* Footer */
 /* ------------------------------------------ */
 footer {
@@ -1381,5 +1400,29 @@ footer {
 
     to {
         background-position: 496px center;
+    }
+}
+
+@keyframes shooting {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(320px);
+    }
+}
+
+@keyframes tail {
+    0% {
+        width: 0;
+    }
+
+    30% {
+        width: 100px;
+    }
+
+    100% {
+        width: 0;
     }
 }
