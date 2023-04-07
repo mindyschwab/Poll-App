@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <h1 class="aboutTitle">Polls <span class="it">Results</span></h1>
 
+<div class="panel-body">
+    <h3>{{ poll.question }}</h3>
+</div>
+
+<ul class="list-group">
+    <li class="list-group-item">{{ poll.choice_one }} &mdash; <strong>{{ poll.choice_one_count }}</strong></li>
+    <li class="list-group-item">{{ poll.choice_two }} &mdash; <strong>{{ poll.choice_two_count }}</strong></li>
+    <li class="list-group-item">{{ poll.choice_three }} &mdash; <strong>{{ poll.choice_three_count }}</strong></li>
+</ul>
 {% endblock %}

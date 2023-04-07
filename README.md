@@ -1,24 +1,35 @@
-# PlanIt 
-<p> At Planit, we believe that event planning should be a collaborative effort, and our website reflects that. We understand that everyone has different preferences and opinions when it comes to planning events, which is why we prioritize communication and collaboration on our platform. Our goal is to help you plan an event that everyone will enjoy and remember for years to come. </p>
+<h1> &#129680; <strong>Plan<em>It</em></strong> &#129680; </h1>
 
+<p> At <a href=""><strong>Plan<em>It</em></strong></a>, we believe that event planning should be a collaborative effort. We understand that everyone has different preferences and opinions when it comes to planning events, which is why we prioritize communication and collaboration on our platform. Our goal is to help you plan an event that everyone will enjoy and remember for years to come. </p>
 
+#
+
+<p>Launch Pad &#128640;</p>
 <img src="https://i.imgur.com/A4n6zld.jpg"/>
-<img src="https://i.imgur.com/lZE6uLK.jpg">
+<p>Mission Control &#127756;</p>
+<img src="https://i.imgur.com/lZE6uLK.jpg"/>
 
-# Technologies Used
+#
+
+<h2> Technologies Used &#128187;</h2>
+
+#
 
 - Django
 - Python
 - PostgreSQL
-- Materialize CSS Framework
+- Materialize CSS Framework 
 
-# Getting Started
+<h2> Getting Started &#10024; </h2>
 
-[Click to Play Connect Four!](your deployment url here)
-<p><a href="https://trello.com/b/76y3eFfr/project-3">Click here</a> to see our workflow and how we planned out this project. </p> 
+#
 
+<p><a href="">Click here</a> to visit <strong>Plan<em>It</em></strong>. &#128301;</p>
+<p><a href="https://trello.com/b/76y3eFfr/project-3">Click here</a> to see our workflow and how we planned out this project. &#128197;</p> 
 
-# Next Steps
+<h2 >Next Steps &#128173;</h2>
 
-- Future enhancement one...
-- Future enhancement two... 
+# 
+
+<p>"The stars don't look bigger, but they do look brighter." - <em> Sally Ride </em><p>
+<a href=""><strong>Plan<em>It</em></strong></a> will continue to grow in the coming months to include a personal calendar and map location capabilites. Stay tuned. 

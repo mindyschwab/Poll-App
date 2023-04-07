@@ -93,7 +93,7 @@ class GroupCreate(CreateView):
 
 class GroupUpdate(UpdateView):
     model = Group
-    fields = '__all__'
+    fields = ['name', 'members']
 
 
 class GroupDelete(DeleteView):
@@ -146,15 +146,9 @@ class PollCreate(CreateView):
         return super().form_valid(form)
     
 
-def polls_detail(request, poll_id):
-    poll = Poll.objects.get(id=poll_id)
-    return render(request, 'polls/polls_detail.html', {
-        'poll': poll
-    })
-
 class PollUpdate(UpdateView):
     model = Poll
-    fields = '__all__'
+    fields = ['question', 'choice_one', 'choice_two', 'choice_three']
 
 class PollDelete(DeleteView):
     model = Poll
@@ -184,7 +178,7 @@ def vote(request, poll_id):
         
         poll.save()
 
-        return redirect('results', poll.id)
+        return redirect('events/<int:event_id>/')
     
     context = {
         'poll': poll

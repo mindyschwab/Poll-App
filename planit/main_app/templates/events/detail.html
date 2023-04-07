@@ -42,7 +42,6 @@
 
                 <div class="card">
                     <div class="card-content">
-                        <a href="{% url 'polls_detail' poll.id %}">Poll Details</a>
                         <span class="card-title">{{ poll.question }}</span>
                         <p>{{ poll.choice_one }}: <Span class="it"> {{ poll.choice_one_count }} votes</Span></p>
                         <p>{{ poll.choice_two }}: <Span class="it"> {{ poll.choice_two_count }} votes</Span></p>

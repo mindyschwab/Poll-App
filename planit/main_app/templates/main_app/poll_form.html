@@ -2,16 +2,28 @@
 
 {% block content %}
 
-<h1>Add Poll</h1>
-
+{% if object%}
+      <h1 class="addEventTitle">Edit Poll<span class="it">{{ object.name }}</span></h1>
+  {% else %}
+      <h1 class="addEventTitle">Add a <span class="it">Poll</span></h1>
+  {% endif %}
+<!-- Leaving the action empty makes the form post to the same url used to display it -->
 <form action="" method="POST">
-
-{% csrf_token %}
-
-<label for="question">Enter Poll Question:</label>
-{{ form.as_table }}
-<input type="submit" value="Submit" class="btn">
-
+  <!-- Django requires the following for security purposes -->
+  {% csrf_token %}
+  <table>
+    <!-- Render the inputs inside of <tr>s & <td>s -->
+    {{ form.as_table }}
+  </table>
+  <input type="submit" value="Submit" class="btn">
 </form>
+<h1 class="addEventTitle">This is the polls edit html</h1>
+</div>
+<div class="stars">
+  <div class="stars1"></div>
+  <div class="stars2"></div>
+  <div class="stars3"></div>
+  <div class="mars"></div>
+</div>
 
 {% endblock %}

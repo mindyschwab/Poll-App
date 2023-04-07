@@ -40,7 +40,7 @@ class Poll(models.Model):
         return f'{self.question}: ({self.choice_one}, {self.choice_two}, {self.choice_three})'
     
     def get_absolute_url(self):
-        return reverse('polls_detail', kwargs={'pk': self.id})
+        return reverse('detail', kwargs={'pk': self.event.id})
 
     class Meta:
         ordering = ['-pub_date']
