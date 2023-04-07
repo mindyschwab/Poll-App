@@ -146,9 +146,15 @@ class PollCreate(CreateView):
     
 
      
-class PollDetail(DetailView):
-    model = Poll
-    success_url = '/polls/<int:pk>/'
+# class PollDetail(DetailView):
+#     model = Poll
+#     success_url = '/polls/'
+
+def polls_detail(request, poll_id):
+    poll = Poll.objects.get(id=poll_id)
+    return render(request, 'main_app/polls_detail.html', {
+        'poll': poll
+    })
 
 class PollUpdate(UpdateView):
     model = Poll
@@ -157,3 +163,9 @@ class PollUpdate(UpdateView):
 class PollDelete(DeleteView):
     model = Poll
     success_url = '/events/'
+
+
+def vote(request, poll_id):
+    for vote in poll_id:
+        vote.views +=1 
+        vote.save()

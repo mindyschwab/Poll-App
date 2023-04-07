@@ -17,7 +17,7 @@ nav {
     background-color: #0D324D;
     position: fixed;
     top: 0;
-    z-index: 4;
+    z-index: 5;
 }
 
 #navbarContainer {
@@ -294,6 +294,7 @@ hr {
     left: 10%;
     right: 10%;
     padding-bottom: 60px;
+    z-index: 4;
 }
 
 .btn-flat {
@@ -356,6 +357,7 @@ textarea:focus {
     top: 15%;
     border: 1px solid white;
     border-radius: 2px;
+    z-index: 4;
 }
 
 .addGroupTitle {
@@ -379,13 +381,17 @@ textarea:focus {
 }
 
 .card {
+    position: relative;
     border: 1px solid white;
     border-radius: 2px;
+    z-index: 4;
 }
 
 .card-content {
+    position: relative;
     background-color: #0D324D;
     border-radius: 2px 2px 0 0 !important;
+    z-index: 4;
 }
 
 .card-title {
@@ -1025,18 +1031,27 @@ textarea:focus {
 
 .moon {
     position: fixed;
-    left: 20%;
-    right: 20%;
+    left: 15%;
+    right: 15%;
+    bottom: -40%;
+    z-index: 1;
     border-radius: 50%;
-    width: 500px;
-    height: 500px;
+    /* border: 1px solid white; */
+    width: 700px;
+    height: 700px;
     background: url(https://astrogeology.usgs.gov/cache/images/019d45da5baa0d0ff374bf01bfe7ea6a_Kaguya_MI_refl_b2_750nm_global_1024.jpg);
     background-repeat: repeat-x;
     background-size: cover;
     animation: moon-rotation 90s linear infinite;
-    box-shadow: inset 60px 0 40px black,
-        inset 160px 0 60px rgba(0, 0, 0, .9),
-        inset -160px 0 60px rgba(248, 248, 213, 0.2);
+    box-shadow: inset 260px 0 240px black,
+        inset 260px 0 260px rgba(0, 0, 0, .9),
+        inset -260px 0 260px rgba(248, 248, 213, 0.2),
+        15px 5px 20px 0px rgba(255, 255, 255, 1),
+        20px 10px 25px 0px rgba(255, 255, 255, 0.2),
+        25px 15px 30px 0px rgba(255, 255, 255, 0.1),
+        inset 0px 5px 20px 25px rgba(255, 255, 255, 1),
+        inset 0px 10px 25px 20px rgba(255, 255, 255, 0.4),
+        inset 0px 15px 30px 15px rgba(255, 255, 255, 0.1);
 }
 
 .moon:before {
@@ -1045,13 +1060,126 @@ textarea:focus {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: brown 1px solid;
+    /* border: brown 1px solid; */
     border-radius: 50%;
-    width: 495px;
-    height: 495px;
+    width: 695px;
+    height: 695px;
+    box-shadow: -260px 0 50px black;
+}
+
+.moonAbout {
+    position: fixed;
+    left: -5%;
+    right: -15%;
+    opacity: .5;
+    z-index: 1;
+    border-radius: 50%;
+    /* border: 1px solid white; */
+    width: 350px;
+    height: 350px;
+    background: url(https://astrogeology.usgs.gov/cache/images/019d45da5baa0d0ff374bf01bfe7ea6a_Kaguya_MI_refl_b2_750nm_global_1024.jpg);
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moon-rotation 90s linear infinite;
+    box-shadow: inset 60px 0 40px black,
+        inset 60px 0 60px rgba(0, 0, 0, .9),
+        inset -60px 0 60px rgba(248, 248, 213, 0.2),
+        15px 5px 20px 0px rgba(255, 255, 255, 1),
+        20px 10px 25px 0px rgba(255, 255, 255, 0.2),
+        25px 15px 30px 0px rgba(255, 255, 255, 0.1),
+        inset 0px 5px 20px 25px rgba(255, 255, 255, 1),
+        inset 0px 10px 25px 20px rgba(255, 255, 255, 0.4),
+        inset 0px 15px 30px 15px rgba(255, 255, 255, 0.1);
+}
+
+.moonAbout:before {
+    content: "";
+    position: absolute;
+    opacity: .5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: brown 1px solid; */
+    border-radius: 50%;
+    width: 695px;
+    height: 695px;
     box-shadow: -60px 0 50px black;
 }
 
+.moonIndex {
+    position: fixed;
+    left: 50%;
+    opacity: .5;
+    z-index: 1;
+    border-radius: 50%;
+    /* border: 1px solid white; */
+    width: 350px;
+    height: 350px;
+    background: url(https://astrogeology.usgs.gov/cache/images/019d45da5baa0d0ff374bf01bfe7ea6a_Kaguya_MI_refl_b2_750nm_global_1024.jpg);
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moon-rotation 90s linear infinite;
+    box-shadow: inset 60px 0 40px black,
+        inset 60px 0 60px rgba(0, 0, 0, .9),
+        inset -60px 0 60px rgba(248, 248, 213, 0.2),
+        15px 5px 20px 0px rgba(255, 255, 255, 1),
+        20px 10px 25px 0px rgba(255, 255, 255, 0.2),
+        25px 15px 30px 0px rgba(255, 255, 255, 0.1),
+        inset 0px 5px 20px 25px rgba(255, 255, 255, 1),
+        inset 0px 10px 25px 20px rgba(255, 255, 255, 0.4),
+        inset 0px 15px 30px 15px rgba(255, 255, 255, 0.1);
+}
+
+.moonIndex:before {
+    content: "";
+    position: absolute;
+    opacity: .5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: brown 1px solid; */
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    box-shadow: -60px 0 50px black;
+}
+
+.moonGroup {
+    position: fixed;
+    left: 70%;
+    top: 60%;
+    z-index: 1;
+    border-radius: 50%;
+    /* border: 1px solid white; */
+    width: 350px;
+    height: 350px;
+    background: url(https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2005/05/envisat_mosaic_may_-_november_2004/9695811-3-eng-GB/Envisat_mosaic_May_-_November_2004_pillars.jpg);
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moon-rotation 90s linear infinite;
+    box-shadow: inset 60px 0 40px black,
+        inset 60px 0 60px rgba(0, 0, 0, .9),
+        inset -60px 0 60px rgba(248, 248, 213, 0.2),
+        5px 5px 25px 0px rgba(255, 255, 255, .5),
+        10px 10px 25px 0px rgba(255, 255, 255, 0.2),
+        15px 15px 30px 0px rgba(255, 255, 255, 0.1),
+        inset 0px 5px 20px 15px rgba(255, 255, 255, .5),
+        inset 0px 10px 25px 10px rgba(255, 255, 255, 0.4),
+        inset 0px 15px 30px 5px rgba(255, 255, 255, 0.1);
+}
+
+.moonGroup:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: brown 1px solid; */
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    box-shadow: -60px 0 50px black;
+}
 
 /* Footer */
 /* ------------------------------------------ */

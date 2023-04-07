@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-from datetime import date
+from datetime import date 
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -32,6 +32,7 @@ class Poll(models.Model):
     choice_one_count = models.IntegerField(default=0, null=True)
     choice_two_count = models.IntegerField(default=0, null=True)
     choice_three_count = models.IntegerField(default=0, null=True)
+    pub_date = models.DateTimeField('date published')
     
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
@@ -41,6 +42,8 @@ class Poll(models.Model):
     def get_absolute_url(self):
         return reverse('polls_detail', kwargs={'pk': self.id})
 
+    class Meta:
+        ordering = ['-pub_date']
 
 class Group(models.Model):
     name = models.CharField(max_length=50)
