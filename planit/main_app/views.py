@@ -145,14 +145,16 @@ class PollCreate(CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
     
+# class PollUpdate(UpdateView):
+#     model = Poll
+#     fields = ['question', 'choice_one', 'choice_two', 'choice_three']
 
-class PollUpdate(UpdateView):
-    model = Poll
-    fields = ['question', 'choice_one', 'choice_two', 'choice_three']
-
-class PollDelete(DeleteView):
-    model = Poll
-    success_url = '/events/'
+def poll_delete(request, poll_id):
+    poll =  Poll.objects.get(id=poll_id)
+    event = poll.event
+    Poll.objects.get(id=poll_id).delete()
+    # return redirect('detail', event_id=event_id)
+    return redirect('index')
 
 def results(request, poll_id):
     poll = Poll.objects.get(pk=poll_id)
@@ -178,7 +180,7 @@ def vote(request, poll_id):
         
         poll.save()
 
-        return redirect('events/<int:event_id>/')
+        return redirect('results', poll.id)
     
     context = {
         'poll': poll

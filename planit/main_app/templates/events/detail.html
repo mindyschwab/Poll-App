@@ -52,8 +52,8 @@
                         <a href="{%url 'vote' poll.id%}">Vote</a>
                         <a href="{%url 'results' poll.id%}">View Results</a>
                         <br>
-                        <a href="{% url 'events_update' event.id %}">Edit</a>
-                        <a href="{% url 'events_delete' event.id %}">Delete</a>
+                        <!-- <a href="{% url 'events_update' event.id %}">Edit</a> -->
+                        <a href="{% url 'polls_delete' poll.id %}">Delete</a>
                     </div>
                 </div>
                 {% endfor %}
