@@ -170,15 +170,14 @@ def results(request, poll_id):
 
 def vote(request, poll_id):
     poll = Poll.objects.get(pk=poll_id)
-
     if request.method == 'POST':
 
-        choice = request.POST('poll')
-        if choice == 'choice_one_count':
+        choice = request.POST['poll']
+        if choice == 'choice_one':
             poll.choice_one_count += 1
-        elif choice == 'choice_two_count':
+        elif choice == 'choice_two':
             poll.choice_two_count += 1
-        elif choice == 'choice_three_count':
+        elif choice == 'choice_three':
             poll.choice_three_count += 1
         else:
             return HttpResponse(400, 'Invalid form option')
