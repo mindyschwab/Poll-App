@@ -21,8 +21,8 @@
 
 </div>
 <br>
-<h2 style="color:white;">Polls: </h2>
-<a href="{% url 'polls_create' %}">Create a new poll</a>
+<h2 class="pollsTitle">Polls: </h2>
+<a class="pollsCreate" href="{% url 'polls_create' %}">Create a new poll</a>
 <div class="row">
     <div class="col s6">
         <p>Add Poll</p>
@@ -43,25 +43,33 @@
                 <div class="card">
                     <div class="card-content">
                         <span class="card-title">{{ poll.question }}</span>
-                        <p>{{ poll.choice_one }}: <Span class="it"> {{ poll.choice_one_count }} votes</Span></p>
-                        <p>{{ poll.choice_two }}: <Span class="it"> {{ poll.choice_two_count }} votes</Span></p>
-                        <p>{{ poll.choice_three }}: <Span class="it"> {{ poll.choice_three_count }} votes</Span></p>
+                        <p class="cardDetails">{{ poll.choice_one }}: <Span class="it"> {{ poll.choice_one_count }}
+                                votes</Span></p>
+                        <p class="cardDetails">{{ poll.choice_two }}: <Span class="it"> {{ poll.choice_two_count }}
+                                votes</Span></p>
+                        <p class="cardDetails">{{ poll.choice_three }}: <Span class="it"> {{ poll.choice_three_count }}
+                                votes</Span></p>
                     </div>
 
                     <div class="card-action">
-                        <a href="{%url 'vote' poll.id%}">Vote</a>
-                        <a href="{%url 'results' poll.id%}">View Results</a>
+                        <a class="itLight" href="{%url 'vote' poll.id%}">Vote</a>
+                        <a class="itLight" href="{%url 'results' poll.id%}">View Results</a>
+                        <br>
                         <br>
                         <!-- <a href="{% url 'events_update' event.id %}">Edit</a> -->
-                        <a href="{% url 'polls_delete' poll.id %}">Delete</a>
+                        <a class="deleteBtn" href="{% url 'polls_delete' poll.id %}">Delete</a>
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </form>
     </div>
-
 </div>
-
+<div class="stars">
+    <div class="stars1"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+    <div class="jupiter"></div>
+</div>
 
 {% endblock %}

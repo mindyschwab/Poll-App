@@ -382,6 +382,36 @@ textarea:focus {
     padding-bottom: 7px;
 }
 
+.pollsTitle {
+    text-align: left;
+    padding-left: 10px;
+    color: white;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    margin: 0;
+    border-bottom: 2px solid #124569;
+    padding-bottom: 7px;
+}
+
+.pollsCreate {
+    position: relative;
+    z-index: 4;
+    color: #7F5A83;
+    padding-left: 10px;
+}
+
+.pollsCreate:hover {
+    position: relative;
+    z-index: 4;
+    color: #ab76b1;
+}
+
+.row {
+    position: relative;
+    z-index: 4;
+}
+
 .card {
     position: relative;
     border: 1px solid white;
