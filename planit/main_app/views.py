@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
@@ -166,6 +166,15 @@ class PollDelete(DeleteView):
 
 
 def vote(request, poll_id):
-    for vote in poll_id:
-        vote.views +=1 
-        vote.save()
+    poll = Poll.objects.get(pk=poll_id)
+    choice = request.POST.get('poll')
+    if choice == 'choice_one_count':
+        poll.choice_one_count += 1
+    elif choice == 'choice_two_count':
+        poll.choice_two_count += 1
+    elif choice == 'choice_three_count':
+        poll.choice_three_count += 1
+    poll.save()
+    return redirect('polls_detail', poll_id=poll_id)
+
+
