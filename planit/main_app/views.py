@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
@@ -149,12 +150,12 @@ class PollCreate(CreateView):
 #     model = Poll
 #     fields = ['question', 'choice_one', 'choice_two', 'choice_three']
 
-def poll_delete(request, poll_id):
-    poll =  Poll.objects.get(id=poll_id)
-    event = poll.event
+def delete_poll(request, event_id, poll_id):
+    # poll =  Poll.objects.get(id=poll_id)
+    # event = poll.event
     Poll.objects.get(id=poll_id).delete()
-    # return redirect('detail', event_id=event_id)
-    return redirect('index')
+    return redirect('detail', event_id=event_id)
+    # return redirect('index')
 
 def results(request, poll_id):
     poll = Poll.objects.get(pk=poll_id)
@@ -166,6 +167,7 @@ def results(request, poll_id):
 
 def vote(request, poll_id):
     poll = Poll.objects.get(pk=poll_id)
+
     if request.method == 'POST':
 
         choice = request.POST['poll']
@@ -176,11 +178,11 @@ def vote(request, poll_id):
         elif choice == 'choice_three':
             poll.choice_three_count += 1
         else:
-            return HttpResponse(400, 'Invalid form option')
+            return HttpResponse('Invalid form option')
         
         poll.save()
 
-        return redirect('results', poll.id)
+        return redirect('index')
     
     context = {
         'poll': poll

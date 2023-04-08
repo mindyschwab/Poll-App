@@ -354,7 +354,7 @@ textarea:focus {
     position: fixed;
     left: 20%;
     right: 20%;
-    background-color: #0D324D;
+    background-color: rgba(13, 50, 77, .9);
     padding-bottom: 7px;
     top: 15%;
     border: 1px solid white;
@@ -421,7 +421,7 @@ textarea:focus {
 
 .card-content {
     position: relative;
-    background-color: #0D324D;
+    background-color: rgba(13, 50, 77);
     border-radius: 2px 2px 0 0 !important;
     z-index: 4;
 }
@@ -500,6 +500,12 @@ textarea:focus {
     overflow: hidden;
     top: 0;
     left: 0;
+}
+
+.planets {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
 }
 
 .stars1 {
@@ -1112,7 +1118,7 @@ textarea:focus {
     background: url(https://astrogeology.usgs.gov/cache/images/019d45da5baa0d0ff374bf01bfe7ea6a_Kaguya_MI_refl_b2_750nm_global_1024.jpg);
     background-repeat: repeat-x;
     background-size: cover;
-    animation: moon-rotation 90s linear infinite;
+    animation: moon-rotation 120s linear infinite;
     box-shadow: inset 60px 0 40px black,
         inset 60px 0 60px rgba(0, 0, 0, .9),
         inset -60px 0 60px rgba(248, 248, 213, 0.2),
@@ -1140,7 +1146,7 @@ textarea:focus {
 
 .neptuneIndex {
     position: fixed;
-    left: 50%;
+    left: 70%;
     z-index: 1;
     border-radius: 50%;
     /* border: 1px solid white; */
@@ -1149,7 +1155,7 @@ textarea:focus {
     background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/efbcbef1-b203-4367-9335-2720d26f49ec/dewawlh-6be379ed-b087-4ea7-8715-709914cafe8b.png/v1/fill/w_1024,h_512,q_80,strp/don_davis_neptune_map_4k__fictional__by_mrspace43_celestia_dewawlh-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6IlwvZlwvZWZiY2JlZjEtYjIwMy00MzY3LTkzMzUtMjcyMGQyNmY0OWVjXC9kZXdhd2xoLTZiZTM3OWVkLWIwODctNGVhNy04NzE1LTcwOTkxNGNhZmU4Yi5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.nz0dPK3TZiYgIyX0a4HwbEg16vN_bngJXmXfH3JkUb8);
     background-repeat: repeat-x;
     background-size: cover;
-    animation: moon-rotation 90s linear infinite;
+    animation: moon-rotation 60s linear infinite;
     box-shadow: inset 60px 0 40px black,
         inset 60px 0 60px rgba(0, 0, 0, .9),
         inset -60px 0 60px rgba(248, 248, 213, 0.2),
@@ -1174,7 +1180,7 @@ textarea:focus {
     box-shadow: -60px 0 50px black;
 }
 
-.moonGroup {
+.earth {
     position: fixed;
     left: 70%;
     top: 60%;
@@ -1198,7 +1204,7 @@ textarea:focus {
         inset 0px 15px 30px 5px rgba(255, 255, 255, 0.1);
 }
 
-.moonGroup:before {
+.earth:before {
     content: "";
     position: absolute;
     top: 50%;
@@ -1224,7 +1230,7 @@ textarea:focus {
     background: url(https://svs.gsfc.nasa.gov/vis/a010000/a012000/a012021/Hubble_Jupiter_color_global_map_2015a_print.jpg);
     background-repeat: repeat-x;
     background-size: cover;
-    animation: moon-rotation 90s linear infinite;
+    animation: moon-rotation 30s linear infinite;
     box-shadow: inset 160px 0 140px black,
         inset 160px 0 160px rgba(0, 0, 0, .9),
         inset -160px 0 160px rgba(248, 248, 213, 0.2),
@@ -1365,6 +1371,345 @@ textarea:focus {
     box-shadow: -60px 0 50px black;
 }
 
+.venusAbout {
+    position: fixed;
+    left: 35%;
+    right: -15%;
+    bottom: -20%;
+    z-index: 1;
+    border-radius: 50%;
+    /* border: 1px solid white; */
+    width: 642px;
+    height: 642px;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Solarsystemscope_texture_8k_venus_surface.jpg/800px-Solarsystemscope_texture_8k_venus_surface.jpg?20201026210231);
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moon-rotation-reverse 800s linear infinite;
+    box-shadow: inset 60px 0 40px black,
+        inset 60px 0 60px rgba(0, 0, 0, .9),
+        inset -60px 0 60px rgba(248, 248, 213, 0.2),
+        15px 5px 20px 0px rgba(255, 255, 255, 1),
+        20px 10px 25px 0px rgba(255, 255, 255, 0.2),
+        25px 15px 30px 0px rgba(255, 255, 255, 0.1),
+        inset 0px 5px 20px 25px rgba(255, 255, 255, 1),
+        inset 0px 10px 25px 20px rgba(255, 255, 255, 0.4),
+        inset 0px 15px 30px 15px rgba(255, 255, 255, 0.1);
+}
+
+.venusAbout:before {
+    content: "";
+    position: absolute;
+    opacity: .5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: brown 1px solid; */
+    border-radius: 50%;
+    width: 637px;
+    height: 637px;
+    box-shadow: -60px 0 50px black;
+}
+
+.venusIndex {
+    position: fixed;
+    left: -5%;
+    right: -15%;
+    bottom: -20%;
+    z-index: 1;
+    border-radius: 50%;
+    /* border: 1px solid white; */
+    width: 642px;
+    height: 642px;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Solarsystemscope_texture_8k_venus_surface.jpg/800px-Solarsystemscope_texture_8k_venus_surface.jpg?20201026210231);
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moon-rotation-reverse 800s linear infinite;
+    box-shadow: inset 60px 0 40px black,
+        inset 60px 0 60px rgba(0, 0, 0, .9),
+        inset -60px 0 60px rgba(248, 248, 213, 0.2),
+        15px 5px 20px 0px rgba(255, 255, 255, 1),
+        20px 10px 25px 0px rgba(255, 255, 255, 0.2),
+        25px 15px 30px 0px rgba(255, 255, 255, 0.1),
+        inset 0px 5px 20px 25px rgba(255, 255, 255, 1),
+        inset 0px 10px 25px 20px rgba(255, 255, 255, 0.4),
+        inset 0px 15px 30px 15px rgba(255, 255, 255, 0.1);
+}
+
+.venusIndex:before {
+    content: "";
+    position: absolute;
+    opacity: .5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: brown 1px solid; */
+    border-radius: 50%;
+    width: 637px;
+    height: 637px;
+    box-shadow: -60px 0 50px black;
+}
+
+.marsGroup {
+    position: fixed;
+    left: -5%;
+    right: -15%;
+    z-index: 1;
+    border-radius: 50%;
+    /* border: 1px solid white; */
+    width: 342px;
+    height: 342px;
+    background: url(https://imageio.forbes.com/specials-images/imageserve/631ee41dcec6e2d404d70386/Holden-Basin-on-Mars-as-seen-by-Mars-Express-on-April-24--2022-/960x0.jpg?format=jpg&width=960);
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moon-rotation 90s linear infinite;
+    box-shadow: inset 60px 0 40px black,
+        inset 60px 0 60px rgba(0, 0, 0, .9),
+        inset -60px 0 60px rgba(248, 248, 213, 0.2),
+        15px 5px 20px 0px rgba(255, 255, 255, 1),
+        20px 10px 25px 0px rgba(255, 255, 255, 0.2),
+        25px 15px 30px 0px rgba(255, 255, 255, 0.1),
+        inset 0px 5px 20px 25px rgba(255, 255, 255, 1),
+        inset 0px 10px 25px 20px rgba(255, 255, 255, 0.4),
+        inset 0px 15px 30px 15px rgba(255, 255, 255, 0.1);
+}
+
+.marsGroup:before {
+    content: "";
+    position: absolute;
+    opacity: .5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: brown 1px solid; */
+    border-radius: 50%;
+    width: 337px;
+    height: 337px;
+    box-shadow: -60px 0 50px black;
+}
+
+.jupiterGroup {
+    position: fixed;
+    left: 65%;
+    top: -30%;
+    right: 15%;
+    bottom: 50%;
+    z-index: 1;
+    border-radius: 50%;
+    /* border: 1px solid white; */
+    width: 634px;
+    height: 634px;
+    background: url(https://svs.gsfc.nasa.gov/vis/a010000/a012000/a012021/Hubble_Jupiter_color_global_map_2015a_print.jpg);
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moon-rotation 30s linear infinite;
+    box-shadow: inset 160px 0 140px black,
+        inset 160px 0 160px rgba(0, 0, 0, .9),
+        inset -160px 0 160px rgba(248, 248, 213, 0.2),
+        15px 5px 20px 0px rgba(255, 255, 255, 1),
+        20px 10px 25px 0px rgba(255, 255, 255, 0.2),
+        25px 15px 30px 0px rgba(255, 255, 255, 0.1),
+        inset 0px 5px 20px 25px rgba(255, 255, 255, 1),
+        inset 0px 10px 25px 20px rgba(255, 255, 255, 0.4),
+        inset 0px 15px 30px 15px rgba(255, 255, 255, 0.1);
+}
+
+.jupiterGroup:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: brown 1px solid; */
+    border-radius: 50%;
+    width: 629px;
+    height: 629px;
+    box-shadow: -160px 0 50px black;
+}
+
+.earthAddGroup {
+    position: fixed;
+    left: 50%;
+    top: 70%;
+    z-index: 1;
+    border-radius: 50%;
+    /* border: 1px solid white; */
+    width: 350px;
+    height: 350px;
+    background: url(https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2005/05/envisat_mosaic_may_-_november_2004/9695811-3-eng-GB/Envisat_mosaic_May_-_November_2004_pillars.jpg);
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moon-rotation 90s linear infinite;
+    box-shadow: inset 60px 0 40px black,
+        inset 60px 0 60px rgba(0, 0, 0, .9),
+        inset -60px 0 60px rgba(248, 248, 213, 0.2),
+        5px 5px 25px 0px rgba(255, 255, 255, .5),
+        10px 10px 25px 0px rgba(255, 255, 255, 0.2),
+        15px 15px 30px 0px rgba(255, 255, 255, 0.1),
+        inset 0px 5px 20px 15px rgba(255, 255, 255, .5),
+        inset 0px 10px 25px 10px rgba(255, 255, 255, 0.4),
+        inset 0px 15px 30px 5px rgba(255, 255, 255, 0.1);
+}
+
+.earthAddGroup:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: brown 1px solid; */
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    box-shadow: -60px 0 50px black;
+}
+
+.neptuneGroupDetail {
+    position: fixed;
+    left: 70%;
+    z-index: 1;
+    border-radius: 50%;
+    /* border: 1px solid white; */
+    width: 150px;
+    height: 150px;
+    background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/efbcbef1-b203-4367-9335-2720d26f49ec/dewawlh-6be379ed-b087-4ea7-8715-709914cafe8b.png/v1/fill/w_1024,h_512,q_80,strp/don_davis_neptune_map_4k__fictional__by_mrspace43_celestia_dewawlh-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6IlwvZlwvZWZiY2JlZjEtYjIwMy00MzY3LTkzMzUtMjcyMGQyNmY0OWVjXC9kZXdhd2xoLTZiZTM3OWVkLWIwODctNGVhNy04NzE1LTcwOTkxNGNhZmU4Yi5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.nz0dPK3TZiYgIyX0a4HwbEg16vN_bngJXmXfH3JkUb8);
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moon-rotation 60s linear infinite;
+    box-shadow: inset 60px 0 40px black,
+        inset 60px 0 60px rgba(0, 0, 0, .9),
+        inset -60px 0 60px rgba(248, 248, 213, 0.2),
+        5px 5px 20px 0px rgba(255, 255, 255, 1),
+        10px 10px 25px 0px rgba(255, 255, 255, 0.2),
+        15px 15px 30px 0px rgba(255, 255, 255, 0.1),
+        inset 0px 5px 20px 15px rgba(255, 255, 255, 1),
+        inset 0px 10px 25px 10px rgba(255, 255, 255, 0.4),
+        inset 0px 15px 30px 5px rgba(255, 255, 255, 0.1);
+}
+
+.neptuneGroupDetail:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: brown 1px solid; */
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    box-shadow: -60px 0 50px black;
+}
+
+.moonGroupDetail {
+    position: fixed;
+    left: 35%;
+    right: 15%;
+    bottom: -40%;
+    z-index: 1;
+    border-radius: 50%;
+    /* border: 1px solid white; */
+    width: 700px;
+    height: 700px;
+    background: url(https://astrogeology.usgs.gov/cache/images/019d45da5baa0d0ff374bf01bfe7ea6a_Kaguya_MI_refl_b2_750nm_global_1024.jpg);
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moon-rotation 90s linear infinite;
+    box-shadow: inset 260px 0 240px black,
+        inset 260px 0 260px rgba(0, 0, 0, .9),
+        inset -260px 0 260px rgba(248, 248, 213, 0.2),
+        15px 5px 20px 0px rgba(255, 255, 255, 1),
+        20px 10px 25px 0px rgba(255, 255, 255, 0.2),
+        25px 15px 30px 0px rgba(255, 255, 255, 0.1),
+        inset 0px 5px 20px 25px rgba(255, 255, 255, 1),
+        inset 0px 10px 25px 20px rgba(255, 255, 255, 0.4),
+        inset 0px 15px 30px 15px rgba(255, 255, 255, 0.1);
+}
+
+.moonGroupDetail:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: brown 1px solid; */
+    border-radius: 50%;
+    width: 695px;
+    height: 695px;
+    box-shadow: -260px 0 50px black;
+}
+
+.neptuneEventDetail {
+    position: fixed;
+    left: 70%;
+    z-index: 1;
+    border-radius: 50%;
+    /* border: 1px solid white; */
+    width: 150px;
+    height: 150px;
+    background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/efbcbef1-b203-4367-9335-2720d26f49ec/dewawlh-6be379ed-b087-4ea7-8715-709914cafe8b.png/v1/fill/w_1024,h_512,q_80,strp/don_davis_neptune_map_4k__fictional__by_mrspace43_celestia_dewawlh-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6IlwvZlwvZWZiY2JlZjEtYjIwMy00MzY3LTkzMzUtMjcyMGQyNmY0OWVjXC9kZXdhd2xoLTZiZTM3OWVkLWIwODctNGVhNy04NzE1LTcwOTkxNGNhZmU4Yi5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.nz0dPK3TZiYgIyX0a4HwbEg16vN_bngJXmXfH3JkUb8);
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moon-rotation 60s linear infinite;
+    box-shadow: inset 60px 0 40px black,
+        inset 60px 0 60px rgba(0, 0, 0, .9),
+        inset -60px 0 60px rgba(248, 248, 213, 0.2),
+        5px 5px 20px 0px rgba(255, 255, 255, 1),
+        10px 10px 25px 0px rgba(255, 255, 255, 0.2),
+        15px 15px 30px 0px rgba(255, 255, 255, 0.1),
+        inset 0px 5px 20px 15px rgba(255, 255, 255, 1),
+        inset 0px 10px 25px 10px rgba(255, 255, 255, 0.4),
+        inset 0px 15px 30px 5px rgba(255, 255, 255, 0.1);
+}
+
+.neptuneEventDetail:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: brown 1px solid; */
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    box-shadow: -60px 0 50px black;
+}
+
+.earthDetail {
+    position: fixed;
+    left: 50%;
+    top: 60%;
+    z-index: 1;
+    border-radius: 50%;
+    /* border: 1px solid white; */
+    width: 650px;
+    height: 650px;
+    background: url(https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2005/05/envisat_mosaic_may_-_november_2004/9695811-3-eng-GB/Envisat_mosaic_May_-_November_2004_pillars.jpg);
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moon-rotation 90s linear infinite;
+    box-shadow: inset 60px 0 40px black,
+        inset 60px 0 60px rgba(0, 0, 0, .9),
+        inset -60px 0 60px rgba(248, 248, 213, 0.2),
+        5px 5px 25px 0px rgba(255, 255, 255, .5),
+        10px 10px 25px 0px rgba(255, 255, 255, 0.2),
+        15px 15px 30px 0px rgba(255, 255, 255, 0.1),
+        inset 0px 5px 20px 15px rgba(255, 255, 255, .5),
+        inset 0px 10px 25px 10px rgba(255, 255, 255, 0.4),
+        inset 0px 15px 30px 5px rgba(255, 255, 255, 0.1);
+}
+
+.earthDetail:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: brown 1px solid; */
+    border-radius: 50%;
+    width: 650px;
+    height: 650px;
+    box-shadow: -60px 0 50px black;
+}
+
 /* planet background animation: https://youtu.be/iHJHxMZ0g-M */
 
 /* Footer */
@@ -1413,5 +1758,15 @@ footer {
 
     to {
         background-position: 496px center;
+    }
+}
+
+@keyframes moon-rotation-reverse {
+    from {
+        background-position: 500px center;
+    }
+
+    to {
+        background-position: -496px center;
     }
 }

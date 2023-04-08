@@ -25,8 +25,8 @@ urlpatterns = [
          views.GroupDelete.as_view(), name='groups_delete'),
     path('accounts/signup/', views.signup, name='signup'),
     path('polls/create/', views.PollCreate.as_view(), name='polls_create'),
-    path('polls/<int:poll_id>/vote', views.vote, name='vote'),
     path('polls/<int:poll_id>/results', views.results, name='results'),
-    path('polls/<int:poll_id>/delete/',
-         views.poll_delete, name='polls_delete'),
+    path('events/<int:event_id>/delete_poll/<int:poll_id>/',
+         views.delete_poll, name='delete_poll'),
+    path('polls/<int:poll_id>/vote', views.vote, name='vote'),
 ]
