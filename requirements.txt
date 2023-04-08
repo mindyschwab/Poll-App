@@ -42,7 +42,6 @@ tornado==6.2
 traitlets==5.9.0
 urllib3==1.26.15
 wcwidth==0.2.6
-=======
 asgiref==3.5.0
 blinker==1.4
 boto3==1.26.103
