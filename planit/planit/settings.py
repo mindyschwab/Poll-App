@@ -79,10 +79,11 @@ WSGI_APPLICATION = 'planit.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'events',
-        # Jeremiah - remember to add PostgreSQL USER: and PASSWORD: to access database.
-        'USER': 'postgres',
-        'PASSWORD': '20Bassoon21!'
+        'NAME': 'mindyschwab/planit',
+        'USER': 'mindyschwab',
+        'PASSWORD': os.environ['DB_PASSWORD'],
+        'HOST': 'db.bit.io',
+        'PORT': '5432',
     }
 }
 
@@ -131,3 +132,8 @@ LOGOUT_REDIRECT_URL = '/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Other settings above
+# Configure Django App for Heroku.
+import django_on_heroku
+django_on_heroku.settings(locals())
