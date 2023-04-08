@@ -1,1 +1,1 @@
-web: py planit/manage.py runserver
+web: gunicorn planit.wsgi
