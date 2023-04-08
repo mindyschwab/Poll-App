@@ -1,1 +1,2 @@
-web: gunicorn planit.wsgi
+web: (cd planit && gunicorn planit.wsgi)
+
