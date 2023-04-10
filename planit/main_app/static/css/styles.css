@@ -415,8 +415,12 @@ textarea:focus {
     z-index: 4;
 }
 
-.PollTitle {
-    color: white;
+.borderStyle {
+    border: 1px solid white;
+}
+
+.pollTitle {
+    color: white !important;
     padding-bottom: 7px;
     border-bottom: 2px solid #124569;
 }

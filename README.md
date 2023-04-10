@@ -25,7 +25,7 @@
 #
 
 <p><a href="https://sei-planit.herokuapp.com/">Click here</a> to visit <strong>Plan<em>It</em></strong>. &#128301;</p>
-<p><a href="https://trello.com/b/76y3eFfr/project-3">Click here</a> to see our workflow and how we planned out this project. &#128197;</p> 
+<p><a href="https://trello.com/b/76y3eFfr/project-3">Click here</a> to see our Trello Board, wire frames, and how we planned out this project. &#128197;</p> 
 
 <h2 >Next Steps &#128173;</h2>
 

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="row">
+<div class="row borderStyle">
     <h1 class="myEventsTitle">Cast Your <span class="it">Vote</span></h1>
     <div class="row">
         <h2 class="pollTitle">{{ poll.question }}</h2>
@@ -14,18 +14,18 @@
                         <div class="form-group">
                             <label for="choice_one">
                                 <input type="radio" name="poll" id="choice_one" value="choice_one" style="opacity:1;">
-                                {{ poll.choice_one }}
+                                <span class="cardDetails">{{ poll.choice_one }}</span>
                             </label>
                                 <br>
                             <label for="choice_two">
                                 <input type="radio" name="poll" id="choice_two" value="choice_two" style="opacity:1;">
-                                {{ poll.choice_two }}
+                                <span class="cardDetails">{{ poll.choice_two }}</span>
                             </label>
                             <br>
                             <label for="choice_three">
                                 <input type="radio" name="poll" id="choice_three" value="choice_three"
                                         style="opacity:1;">
-                                    {{ poll.choice_three }}
+                                        <span class="cardDetails">{{ poll.choice_three }}</span>
                             </label>
                         </div>
                             <hr />
