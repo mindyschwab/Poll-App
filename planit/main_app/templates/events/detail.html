@@ -53,7 +53,7 @@
 
                     <div class="card-action">
                         <a class="itLight" href="{%url 'vote' poll.id%}">Vote</a>
-                        <a class="itLight" href="{%url 'results' poll.id%}">View Results</a>
+                        {% comment %} <a class="itLight" href="{%url 'results' poll.id%}">View Results</a> {% endcomment %}
                         <br>
                         <br>
                         <!-- <form action="{% url delete_poll' event.id poll.id}" method="POST">

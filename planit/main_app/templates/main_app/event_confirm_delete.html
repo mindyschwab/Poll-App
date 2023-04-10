@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Delete Event</h1>
+  <h1 class='myEventsTitle'>Delete Event</h1>
 
-  <h4>Are you sure you want to delete {{ object.name }}?</h4>
+  <h4 style= "color: white;">Are you sure you want to delete {{ object.name }}?</h4>
 
   <form action="" method="POST">
     {% csrf_token %}

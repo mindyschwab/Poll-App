@@ -4,6 +4,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from .models import Event, Group, Poll
 from .forms import PollForm
 from django.http import HttpResponse
@@ -23,7 +24,7 @@ def about(request):
 
 # *************** Events Views ****************
 
-
+@login_required
 def events_index(request):
     events = Event.objects.all()
     # events = Event.filter(user=request.user)
